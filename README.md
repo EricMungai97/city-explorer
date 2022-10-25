@@ -25,6 +25,11 @@
 6. LocationIQ Server/API
 7. Node.js
 
+
+## Web Request Response Cycle
+
+![WRRC](https://www.icloud.com/photos/#0349r415tUif17PXvnGzaMmJg)
+
 ## Change Log
 
 ## Credit and Collaborations
