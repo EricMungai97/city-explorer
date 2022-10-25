@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+body {
+  background-color:chocolate;
+}
+
+h1 {
+  font-weight: bolder;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+label {
+  font-weight:bolder;
+  color:aliceblue;
+ 
+}
+
+input.form-control {
+  width: 40vw;
+  margin: auto;
+  margin-bottom: 30px;
+ 
+}
+
+button {
+  margin-bottom: 30px;
+}
+
+footer {
+  font-weight: bolder;
+  font-size: 20pt;
+  text-align: center;
+}
+ div.card-body {
+ 
+  background-color: lightcoral;
+ }
+
+
+
+ #card.card {
+  background-color: lightcoral;
+  width: 80vw;
+  margin: auto;
+ }
