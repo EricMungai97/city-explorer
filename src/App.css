@@ -82,3 +82,9 @@ footer {
   width: 80vw;
   margin: auto;
  }
+
+ div.card {
+  background-color: red;
+  width:80vw;
+  margin: auto;
+ }
