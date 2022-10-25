@@ -1,5 +1,4 @@
 import React from 'react';
-// import axios from 'axios';
 import Header from './components/Header.js';
 import City from './components/City.js';
 import Main from './components/Main.js';
