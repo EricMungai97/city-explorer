@@ -30,7 +30,7 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({
       query: e.target.value
-    })
+    });
     console.log(this.state.query);
   }
 
@@ -47,12 +47,13 @@ class App extends React.Component {
 
 
       let cityData = await axios.get(url);
+      let showData = cityData.data[0]
 
 
       console.log(cityData);
 
       this.setState({
-        cityData: cityData.data[0],
+        cityData: showData,
         error: false,
         cityLat: cityData.data[0].lat,
         cityLon: cityData.data[0].lon,
@@ -62,10 +63,9 @@ class App extends React.Component {
 
       }, () => {
         this.getMapData();
+        this.getWeatherData(showData);
       });
-
-      this.getWeatherData();
-      
+    
       console.log(this.state)
 
     } catch (error) {
@@ -79,7 +79,7 @@ class App extends React.Component {
   }
 
   getMapData = async () => {
-
+    
     let cityMapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityLat},${this.state.cityLon}&zoom=10`;
 
 
@@ -87,20 +87,28 @@ class App extends React.Component {
     this.setState({ cityMap: cityMapUrl })
   }
 
-  getWeatherData = async () => {
+  getWeatherData = async (city) => {
+    console.log(this.state.cityName);
     
     // TODO: BUILD OUT FUNCTIONALITY TO CALL MY SERVER AND GET PET DATA
-    
-      let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.cityName}`;
+    try{
+      let url = `${process.env.REACT_APP_SERVER}/weather?cityName=${this.state.query}&lat=${city.lat}&lon=${city.lon}`;
 
       let weatherData = await axios.get(url);
 
       this.setState({
-        weatherData: weatherData.data,
+        weatherData: weatherData.data
       
       })
+    } catch (error) {
+        this.setState({
+          error: true,
+          errorMessage: error.message,
+  
+        })
    
   }
+}
 
   render() {
 
@@ -122,13 +130,15 @@ class App extends React.Component {
             :
             <Main />
         }
-        <Weather
-        weatherData={this.state.weatherData} />
+        
         <Main
           cityName={this.state.cityName}
           latitude={this.state.cityLat}
           longitude={this.state.cityLon}
           place={this.state.cityMap}
+        />
+        <Weather
+        weatherData={this.state.weatherData} 
         />
         <Footer />
 
