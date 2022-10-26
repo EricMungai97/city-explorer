@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header.js';
 import Cityform from './components/Cityform.js';
+import Weather from './components/Weather.js'
 import Main from './components/Main.js';
 import Footer from './components/Footer.js';
 import Card from 'react-bootstrap/Card';
@@ -18,8 +19,9 @@ class App extends React.Component {
       cityLat: '',
       cityLon: '',
       cityMap: '',
-      query: ''
-
+      query: '',
+      weatherData: [],
+   
     }
   }
 
@@ -62,7 +64,9 @@ class App extends React.Component {
         this.getMapData();
       });
 
-      // console.log(this.state)
+      this.getWeatherData();
+      
+      console.log(this.state)
 
     } catch (error) {
       this.setState({
@@ -71,8 +75,7 @@ class App extends React.Component {
 
       })
     }
-
-
+   
   }
 
   getMapData = async () => {
@@ -84,11 +87,24 @@ class App extends React.Component {
     this.setState({ cityMap: cityMapUrl })
   }
 
+  getWeatherData = async () => {
+    
+    // TODO: BUILD OUT FUNCTIONALITY TO CALL MY SERVER AND GET PET DATA
+    
+      let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.cityName}`;
 
+      let weatherData = await axios.get(url);
+
+      this.setState({
+        weatherData: weatherData.data,
+      
+      })
+   
+  }
 
   render() {
 
-
+ 
 
     return (
       <div>
@@ -106,6 +122,8 @@ class App extends React.Component {
             :
             <Main />
         }
+        <Weather
+        weatherData={this.state.weatherData} />
         <Main
           cityName={this.state.cityName}
           latitude={this.state.cityLat}

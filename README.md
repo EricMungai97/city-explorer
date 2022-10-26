@@ -5,6 +5,8 @@
 
 ## Overview
 
+Let's the user input a city name in the search bar then displays coordinates and a map.
+
 ## Getting Started
 
 1. Create a new local repo with the "create-react-app" command.
@@ -36,13 +38,16 @@
 
 Name of feature: Display a map with coordinates
 
-Estimate of time needed to complete:
+Estimate of time needed to complete: 4hrs
 
-Start time:
+Start time: 4pm
 
-Finish time:
+Finish time: 10am
 
-Actual time needed to complete:
+Actual time needed to complete: 4hrs
+
+![wrrc](/wrrc.jpg)
+![wrrc2](/2nd%20wrrc.jpg)
 
 
 
