@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+
 import Card from 'react-bootstrap/Card';
 
 class Movies extends React.Component {
