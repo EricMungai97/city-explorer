@@ -1,7 +1,7 @@
 # Project Name
 
 **Author** : Eric Kinuthia
-**Version** : 1.0.0
+**Version** : 1.0.3
 
 ## Overview
 
@@ -27,11 +27,6 @@ Let's the user input a city name in the search bar then displays coordinates and
 6. LocationIQ Server/API
 7. Node.js
 
-
-## Web Request Response Cycle
-
-![WRRC](https://www.icloud.com/photos/#0349r415tUif17PXvnGzaMmJg)
-
 ## Change Log
 
 ## Credit and Collaborations
@@ -46,8 +41,8 @@ Finish time: 10am
 
 Actual time needed to complete: 4hrs
 
+## Web Request Response Cycle
+
 ![wrrc](/wrrc.jpg)
 ![wrrc2](/2nd%20wrrc.jpg)
-
-
-
+![wrrc3](/WRRC3.jpg)

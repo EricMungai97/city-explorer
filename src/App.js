@@ -3,6 +3,7 @@ import Header from './components/Header.js';
 import Cityform from './components/Cityform.js';
 import Weather from './components/Weather.js'
 import Main from './components/Main.js';
+import Movies from './components/Movies.js'
 import Footer from './components/Footer.js';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
@@ -21,6 +22,8 @@ class App extends React.Component {
       cityMap: '',
       query: '',
       weatherData: [],
+      movieData: []
+    
    
     }
   }
@@ -64,6 +67,7 @@ class App extends React.Component {
       }, () => {
         this.getMapData();
         this.getWeatherData(showData);
+        this.getMovieData();
       });
     
       console.log(this.state)
@@ -92,7 +96,7 @@ class App extends React.Component {
     
     // TODO: BUILD OUT FUNCTIONALITY TO CALL MY SERVER AND GET PET DATA
     try{
-      let url = `${process.env.REACT_APP_SERVER}/weather?cityName=${this.state.query}&lat=${city.lat}&lon=${city.lon}`;
+      let url = `${process.env.REACT_APP_SERVER}/weather?lat=${city.lat}&lon=${city.lon}`;
 
       let weatherData = await axios.get(url);
 
@@ -107,6 +111,24 @@ class App extends React.Component {
   
         })
    
+  }
+}
+
+getMovieData = async () => {
+  try {
+    let url = `${process.env.REACT_APP_SERVER}/movies?query=${this.state.query}`;
+
+    let movieData = await axios.get(url);
+
+    this.setState({
+      movieData: movieData.data
+    })
+    
+  } catch (error) {
+    this.setState({
+      error: true,
+      errorMessage: error.message,
+    })
   }
 }
 
@@ -139,6 +161,9 @@ class App extends React.Component {
         />
         <Weather
         weatherData={this.state.weatherData} 
+        />
+        <Movies 
+        movieData={this.state.movieData}
         />
         <Footer />
 

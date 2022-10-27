@@ -9,16 +9,19 @@ class Weather extends React.Component {
 
         <Card style={{ width: '18rem' }}>
 
-          
-            {this.props.weatherData.map((day, index) =>
+
+          {this.props.weatherData.map((day, index) =>
             <Card.Body>
-            <Card.Title>Forecast Data</Card.Title>
-            <Card.Text>
-              {day.datetime}
-              {day.name}
-            </Card.Text>
-          
-          </Card.Body>
+              <Card.Title>Forecast Data</Card.Title>
+              <Card.Text>
+                {day.datetime}
+
+              </Card.Text>
+              <Card.Text>
+                {day.description}
+              </Card.Text>
+
+            </Card.Body>
           )}
         </Card>
       </div>
