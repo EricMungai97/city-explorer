@@ -66,25 +66,43 @@ button {
 }
 
 footer {
+  margin-top: 40px;
   font-weight: bolder;
   font-size: 20pt;
   text-align: center;
 }
  div.card-body {
  
-  background-color: lightcoral;
+  background-color: #BDE038;
  }
 
 
 
  #card.card {
-  background-color: lightcoral;
+  background-color: #BDE038;
   width: 80vw;
   margin: auto;
+  
  }
 
  div.card {
-  background-color: red;
+  background-color:#BDE038;;
   width:80vw;
   margin: auto;
+  border-radius: #BDE038;
+
  }
+
+ .card {
+  height: 100%;
+  border-radius: #BDE038;
+}
+
+div#row {
+  margin-top: 5px;
+  margin: auto;
+}
+
+#contain {
+  margin: auto;
+}
