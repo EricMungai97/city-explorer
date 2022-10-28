@@ -31,13 +31,32 @@ Let's the user input a city name in the search bar then displays coordinates and
 
 ## Credit and Collaborations
 
-Name of feature: Display a map with coordinates
+## Name of feature: Display a map with coordinates
 
 Estimate of time needed to complete: 4hrs
 
 Start time: 4pm
 
 Finish time: 10am
+
+Actual time needed to complete: 4hrs
+
+## Name of feature: Display a map with coordinates
+
+Estimate of time needed to complete: 4hrs
+
+Start time: 4pm
+
+Finish time: 10am
+
+Actual time needed to complete: 4hrs
+## Name of feature: Display weather data and movie data
+
+Estimate of time needed to complete: 4hrs
+
+Start time: 2pm
+
+Finish time: 10pm
 
 Actual time needed to complete: 4hrs
 

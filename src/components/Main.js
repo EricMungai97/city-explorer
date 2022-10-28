@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 
+
 class Main extends React.Component {
 
 
@@ -8,7 +9,8 @@ class Main extends React.Component {
   render(){
     return(
       <div>
-        <Card id='card'>
+        
+        <Card className='crad'>
         <Card.Body>
           <Card.Title>{this.props.cityName}</Card.Title>
           <Card.Text>
