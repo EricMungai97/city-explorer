@@ -7,7 +7,7 @@ class Moviecard extends React.Component {
   render(){
     return(
       <Col className='m-4'>
-    <Card style={{ width: '18rem' }}>
+    <Card id='heit' style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Img variant="top" src={this.props.imageurl} />
         <Card.Title>{this.props.title}</Card.Title>
