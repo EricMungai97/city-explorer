@@ -71,39 +71,17 @@ footer {
   font-size: 20pt;
   text-align: center;
 }
- div.card-body {
- 
-  background-color: #BDE038;
- }
 
-
-
- #card.card {
-  background-color: #BDE038;
-  width: 80vw;
-  margin: auto;
+#cont {
+  text-align: center;
   
- }
+}
 
- div.card {
-  background-color:#BDE038;;
-  width:80vw;
-  margin: auto;
-  border-radius: #BDE038;
+div.row.row {
+  text-align: center;
+}
 
- }
-
- .card {
+#heit {
   height: 100%;
-  border-radius: #BDE038;
+  background-color:pink ;
 }
-
-div#row {
-  margin-top: 5px;
-  margin: auto;
-}
-
-#contain {
-  margin: auto;
-}
-

@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 
+
 class Movies extends React.Component {
   render() {
     let movieDat = this.props.movieData.map((movie, index) => {
@@ -19,8 +20,10 @@ class Movies extends React.Component {
 
     return (
       <div>
-        <Container>
+       
+        <Container >
           <Row xs={1} sm={3} md={4} lg={5}>
+          
           {movieDat}
         </Row>
       </Container>

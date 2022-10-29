@@ -6,6 +6,10 @@ import Main from './components/Main.js';
 import Movies from './components/Movies.js'
 import Footer from './components/Footer.js';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 import axios from 'axios';
 import './App.css';
 
@@ -22,7 +26,8 @@ class App extends React.Component {
       cityMap: '',
       query: '',
       weatherData: [],
-      movieData: []
+      movieData: [],
+      displayCard: false
     
    
     }
@@ -60,7 +65,8 @@ class App extends React.Component {
         error: false,
         cityLat: cityData.data[0].lat,
         cityLon: cityData.data[0].lon,
-        cityName: cityData.data[0].display_name
+        cityName: cityData.data[0].display_name,
+        displayCard: true
 
 
 
@@ -144,27 +150,39 @@ getMovieData = async () => {
           handleGetCity={this.handleGetCity}
           error={this.state.error}
         />
+        <Container id="cont">
+          <Col>
+          <Row xs={1} sm={3} md={4} lg={5}>
+        {
+          this.state.displayCard ?
+          <Main
+          cityName={this.state.cityName}
+          latitude={this.state.cityLat}
+          longitude={this.state.cityLon}
+          place={this.state.cityMap}
+        /> : null
+        }
+        
         {
 
           this.state.error
             ?
             <Card>{this.state.errorMessage}</Card>
             :
-            <Main />
+            null
         }
         
-        <Main
-          cityName={this.state.cityName}
-          latitude={this.state.cityLat}
-          longitude={this.state.cityLon}
-          place={this.state.cityMap}
-        />
+        
         <Weather
         weatherData={this.state.weatherData} 
         />
+        </Row>
+         </Col>
+        </Container>
         <Movies 
         movieData={this.state.movieData}
         />
+       
         <Footer />
 
 
